@@ -20,8 +20,14 @@ DEVICE_PATH := device/xiaomi/riva
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Revenge OS stuff.
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_GAPPS_ARCH := arm64
+REVENGEOS_BUILDTYPE := UNOFFICIAL
+$(call inherit-product, vendor/revengeos/config/common.mk)
+$(call inherit-product, vendor/revengeos/config/gsm.mk)
+IS_PHONE := true
+$(call inherit-product, vendor/revengeos/config/common.mk)
 
 # Inherit from riva device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
@@ -30,7 +36,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := riva
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Redmi 5A
-PRODUCT_NAME := lineage_riva
+PRODUCT_NAME := revengeos_riva
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
