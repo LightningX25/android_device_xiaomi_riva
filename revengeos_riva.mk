@@ -27,7 +27,6 @@ REVENGEOS_BUILDTYPE := UNOFFICIAL
 $(call inherit-product, vendor/revengeos/config/common.mk)
 $(call inherit-product, vendor/revengeos/config/gsm.mk)
 IS_PHONE := true
-$(call inherit-product, vendor/revengeos/config/common.mk)
 
 # Inherit from riva device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
